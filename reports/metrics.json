@@ -1,0 +1,110 @@
+{
+  "datasets": {
+    "phiusiil_urls": 235795,
+    "phiusiil_phish": 100945,
+    "commoncrawl_train_urls": 35002,
+    "openphish_live_urls": 300,
+    "commoncrawl_heldout_urls": 9668,
+    "tranco_heldout_sites": 10000,
+    "train_urls": 192560,
+    "val_urls": 24689,
+    "in_dataset_test_urls": 53548
+  },
+  "phiusiil_shortcut": {
+    "legitimate": {
+      "has_path": 0.0,
+      "https": 1.0,
+      "www": 1.0
+    },
+    "phishing": {
+      "has_path": 0.2841448313438011,
+      "https": 0.48735449997523406,
+      "www": 0.4137005299915796
+    }
+  },
+  "target_fpr": 0.01,
+  "naive_threshold": 0.02398602746500917,
+  "robust_threshold": 0.7028329822023245,
+  "results": {
+    "naive": {
+      "in_dataset_random_split": {
+        "n": 46761,
+        "phish": 20060,
+        "roc_auc": 0.9986811008120167,
+        "avg_precision": 0.9990049030027203,
+        "recall": 0.9968095712861416,
+        "false_positive_rate": 0.011610052057975356,
+        "precision": 0.9847335762828721
+      },
+      "openphish_live": {
+        "n": 300,
+        "phish": 300,
+        "recall": 1.0,
+        "precision": 1.0
+      },
+      "commoncrawl_heldout": {
+        "n": 9668,
+        "phish": 0,
+        "false_positive_rate": 0.9985519238725693,
+        "precision": 0.0
+      },
+      "tranco_top_sites": {
+        "n": 10000,
+        "phish": 0,
+        "false_positive_rate": 0.9997,
+        "precision": 0.0
+      }
+    },
+    "robust": {
+      "in_dataset_grouped_split": {
+        "n": 53548,
+        "phish": 19649,
+        "roc_auc": 0.9016001332846004,
+        "avg_precision": 0.8943699632733315,
+        "recall": 0.6543844470456511,
+        "false_positive_rate": 0.010501784713413375,
+        "precision": 0.9730588769486908
+      },
+      "openphish_live": {
+        "n": 300,
+        "phish": 300,
+        "recall": 0.8433333333333334,
+        "precision": 1.0
+      },
+      "commoncrawl_heldout": {
+        "n": 9668,
+        "phish": 0,
+        "false_positive_rate": 0.021307405875051717,
+        "precision": 0.0
+      },
+      "tranco_top_sites": {
+        "n": 10000,
+        "phish": 0,
+        "false_positive_rate": 0.0247,
+        "precision": 0.0
+      }
+    }
+  },
+  "naive_top_features": {
+    "has_www": 0.4556,
+    "starts_https": 0.4459,
+    "has_path": 0.0242,
+    "host_length": 0.0169,
+    "raw_length": 0.0159
+  },
+  "robust_top_features": {
+    "subdomains": 0.4395,
+    "risky_tld": 0.0818,
+    "longest_path_token": 0.0726,
+    "free_hosting": 0.0475,
+    "path_length": 0.0435,
+    "host_digits": 0.0357,
+    "tld_edu_gov": 0.0312,
+    "tld_length": 0.0281
+  },
+  "model": {
+    "trees": 300,
+    "leaves_per_tree": 31,
+    "features": 35
+  }
+}
