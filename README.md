@@ -2,6 +2,8 @@
 
 **Live demo: [kmuhwati.github.io/phishing-url-detector](https://kmuhwati.github.io/phishing-url-detector/)**
 
+[![Live demo](web/public/og-image.png)](https://kmuhwati.github.io/phishing-url-detector/)
+
 ![tests](https://img.shields.io/badge/tests-4%20Python%20%2B%205%20JS%20passing-2a78d6) ![python](https://img.shields.io/badge/python-3.12-2a78d6) ![model](https://img.shields.io/badge/model-LightGBM-eb6834) ![hosting](https://img.shields.io/badge/runs%20in-the%20browser-1baf7a)
 
 Paste a link into the demo and it returns a phishing score and the reasons behind it. The model is a gradient-boosted tree ensemble that reads only the text of the URL, so it runs in the browser with no server, and nothing typed into the page is sent anywhere.

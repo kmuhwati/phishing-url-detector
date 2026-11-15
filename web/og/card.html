@@ -1,0 +1,70 @@
+<!doctype html>
+<!-- Share card (1200x630) rendered to web/public/og-image.png by web/og/render.sh. The score is what the
+     live demo gives this example URL (top three reasons drawn to scale); the trust numbers come from reports/metrics.json. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #f6f7f9; color: #0f1419; padding: 56px 64px 48px; display: flex; flex-direction: column;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 650; }
+  .mark { width: 26px; height: 26px; border-radius: 50%; border: 3px solid #0f1419; background: conic-gradient(#d0281b 0 30%, transparent 30% 100%); }
+  .tag { font-size: 16px; font-weight: 600; color: #48515e; border: 1.5px solid #d3d8df; border-radius: 6px; padding: 3px 10px; margin-left: 6px; background: #fff; }
+  .site { font: 19px "Cascadia Mono", Consolas, monospace; color: #48515e; }
+  h1 { font-size: 52px; line-height: 1.06; letter-spacing: -0.025em; font-weight: 700; margin-top: 52px; }
+  .card { margin-top: 40px; display: grid; grid-template-columns: 300px 1fr; background: #fff; border: 1.5px solid #e4e7ec; border-radius: 12px; box-shadow: 0 10px 30px rgb(15 20 25 / 0.07); overflow: hidden; }
+  .score { padding: 22px 26px; border-right: 1.5px solid #e4e7ec; }
+  .k { font-size: 13px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #8a93a1; }
+  .num { font-size: 64px; font-weight: 700; color: #d0281b; letter-spacing: -0.03em; line-height: 1.05; margin-top: 4px; }
+  .num small { font-size: 22px; color: #8a93a1; font-weight: 500; letter-spacing: 0; }
+  .segs { display: grid; grid-template-columns: repeat(20, 1fr); gap: 3px; margin-top: 12px; }
+  .segs i { height: 14px; border-radius: 2px; background: #f0b3ad; }
+  .segs i.hot { background: #d0281b; }
+  .url { padding: 22px 26px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .pill { align-self: flex-start; font-size: 16px; font-weight: 700; color: #d0281b; background: #fdeeec; border-radius: 5px; padding: 3px 11px; }
+  .parts { font: 22px/1.45 "Cascadia Mono", Consolas, monospace; background: #f9fafb; border: 1.5px solid #e4e7ec; border-radius: 8px; padding: 12px 16px; word-break: break-all; }
+  .ign { color: #8a93a1; text-decoration: line-through; }
+  .sub { color: #b45309; }
+  .dom { font-weight: 700; background: #eceef1; border-radius: 4px; padding: 0 3px; }
+  .path { color: #2d5bd0; }
+  .why { list-style: none; padding: 0; display: grid; gap: 7px; }
+  .why li { display: grid; grid-template-columns: 1fr 150px; align-items: center; gap: 14px; font-size: 18px; color: #48515e; }
+  .why li i { height: 11px; border-radius: 2px; background: #d0281b; }
+  .stats { margin-top: auto; display: flex; gap: 40px; white-space: nowrap; font-size: 21px; color: #48515e; }
+  .stats b { color: #0f1419; font-size: 30px; font-weight: 700; margin-right: 8px; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand"><span class="mark"></span>Link risk review<span class="tag">Live demo</span></div>
+    <span class="site">kmuhwati.github.io/phishing-url-detector</span>
+  </div>
+  <h1>Is this link phishing? The model shows why.</h1>
+  <div class="card">
+    <div class="score">
+      <span class="k">Risk score</span>
+      <p class="num">99<small> / 99</small></p>
+      <div class="segs"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hot"></i><i class="hot"></i><i class="hot"></i><i class="hot"></i><i class="hot"></i><i class="hot"></i></div>
+    </div>
+    <div class="url">
+      <span class="pill">Likely phishing</span>
+      <p class="parts"><span class="ign">http://</span><span class="sub">paypal.com.</span><span class="dom">secure-login-verify.xyz</span><span class="path">/webscr</span></p>
+      <ul class="why">
+        <li>Words like 'login' or 'verify'<i style="width: 100%"></i></li>
+        <li>Number of subdomains<i style="width: 91%"></i></li>
+        <li>Domain ending often abused for phishing<i style="width: 75%"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="stats">
+    <span><b>84%</b>live phishing links caught</span>
+    <span><b>2.1%</b>false alarms on new sites</span>
+    <span><b>35</b>link-text features</span>
+  </div>
+</body>
+</html>
